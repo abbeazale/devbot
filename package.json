@@ -1,0 +1,26 @@
+{
+  "name": "devbot",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "license": "MIT",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc",
+    "start": "node ."
+  },
+  "keywords": [],
+  "author": "",
+  "dependencies": {
+    "@discord-player/extractor": "^4.4.5",
+    "@spotify/web-api-ts-sdk": "^1.1.2",
+    "discord-player": "^6.6.6",
+    "discord.js": "^14.14.1",
+    "dotenv": "^16.3.1",
+    "mediaplex": "^0.0.9",
+    "ytdl-core": "^4.11.5"
+  },
+  "devDependencies": {
+    "@types/node": "^20.8.9",
+    "tsx": "^3.14.0"
+  }
+}
