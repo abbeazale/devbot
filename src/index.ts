@@ -6,7 +6,7 @@ import { deployCommands } from "./deployCommands";
 import {Player } from 'discord-player';
 
 
-const client = new Client({
+export const client = new Client({
     intents: ['Guilds', 'GuildMessages', 'DirectMessages', "GuildVoiceStates", "GuildMembers"]
 })
 
@@ -33,7 +33,7 @@ client.on('interactionCreate', async (interaction) => {
     }
     const {commandName} = interaction;
     if(commands[commandName as keyof typeof commands]) {
-        commands[commandName as keyof typeof commands].execute(interaction);
+        commands[commandName as keyof typeof commands].execute(interaction) ;
         console.log('command executed', commandName);
     }
 });
