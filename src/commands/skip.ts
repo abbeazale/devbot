@@ -5,15 +5,11 @@ const {  Player } = require('discord-player');
 import {useMainPlayer} from 'discord-player';
 import { useTimeline, useQueue } from 'discord-player';
 
-
-
-
 export const data = new SlashCommandBuilder()
     .setName('skip')
     .setDescription('Skips the current song')
 
 export async function execute( interaction: CommandInteraction){
-
     await interaction.deferReply();
     const queue = useQueue(interaction.guildId!);
 
@@ -28,8 +24,4 @@ export async function execute( interaction: CommandInteraction){
         console.log('error', e);
         return interaction.followUp(`Something went wrong: ${e}`);
    }
- 
-
-    
 }
-

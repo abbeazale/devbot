@@ -5,7 +5,6 @@ import { config } from "./config";
 import { deployCommands } from "./deployCommands";
 import {Player } from 'discord-player';
 
-
 export const client = new Client({
     intents: ['Guilds', 'GuildMessages', 'DirectMessages', "GuildVoiceStates", "GuildMembers"]
 })
@@ -15,6 +14,7 @@ const player = new Player(client);
 client.on('ready', async (guild) => {
     console.log('Bot is ready!!');
     console.log('deplying commands');
+    
     //adds new commands to the server
     deployCommands();
     console.log('commands deployed');
@@ -23,7 +23,6 @@ client.on('ready', async (guild) => {
     await player.extractors.loadDefault();
     console.log('player ready');
 })
-
 
 //event for when a new user interaction has been created
 client.on('interactionCreate', async (interaction) => {
@@ -37,7 +36,5 @@ client.on('interactionCreate', async (interaction) => {
         console.log('command executed', commandName);
     }
 });
-
-
 
 client.login(config.TOKEN);

@@ -1,6 +1,5 @@
 import { CommandInteraction, SlashCommandBuilder } from "discord.js";
 import { GuildMember } from 'discord.js';
-
 const { useMainPlayer } = require('discord-player');
 
 export const data = new SlashCommandBuilder()

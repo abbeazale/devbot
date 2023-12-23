@@ -6,6 +6,7 @@ import * as skip from "./skip";
 import * as queue from "./queue";
 import * as resume from "./resume";
 import * as pause from "./pause";
+import * as stop from "./stop";
 
 export const commands = {
     ping,
@@ -15,5 +16,6 @@ export const commands = {
     skip,
     queue,
     pause,
-    resume
+    resume,
+    stop
 };

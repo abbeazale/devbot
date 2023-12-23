@@ -6,7 +6,6 @@ export const data = new SlashCommandBuilder()
     .setDescription('Stops the current song');
 
 export async function execute(interaction: CommandInteraction){
-
     const timeLine = useTimeline(interaction.guildId!);
     await interaction.deferReply();
     const queue = useQueue(interaction.guildId!);

@@ -7,7 +7,6 @@ export const data = new SlashCommandBuilder()
 
 export async function execute(interaction: CommandInteraction){
     await interaction.deferReply();
-
     const timeLine = useTimeline(interaction.guildId!);
 
     if (!timeLine) {
@@ -27,5 +26,4 @@ export async function execute(interaction: CommandInteraction){
         console.log('error', error);
         return interaction.followUp(`Something went wrong: ${error}`);
     }
-
 }
