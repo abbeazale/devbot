@@ -1,9 +1,5 @@
 import {CommandInteraction, SlashCommandBuilder, GuildMember, Client} from 'discord.js';
-const { Track} = require('discord-player');
-import {client} from '../index';
-const {  Player } = require('discord-player');
-import {useMainPlayer} from 'discord-player';
-import { useTimeline, useQueue } from 'discord-player';
+import { useQueue } from 'discord-player';
 
 export const data = new SlashCommandBuilder()
     .setName('skip')

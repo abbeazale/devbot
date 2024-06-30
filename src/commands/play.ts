@@ -1,6 +1,7 @@
 import { CommandInteraction, SlashCommandBuilder } from "discord.js";
 import { GuildMember } from 'discord.js';
-const { useMainPlayer } = require('discord-player');
+//const { useMainPlayer } = require('discord-player');
+import { useMainPlayer } from 'discord-player';
 
 export const data = new SlashCommandBuilder()
     .setName('play')
@@ -22,6 +23,11 @@ export async function execute(interaction: CommandInteraction){
         //const channel = await player.connect(interaction.member.voice.channel!);
         await interaction.deferReply();
         try {
+
+            if (!channel) {
+                return interaction.reply('no channel found');
+            }
+
             const {track} = await player.play(channel, query, {
                 nodeOptions: {
                     metadata: interaction
