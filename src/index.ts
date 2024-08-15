@@ -1,9 +1,11 @@
 //initializing bot to discord making it online
+
 import { Client } from "discord.js";
 import { commands } from "./commands";
 import { config } from "./config";
 import { deployCommands } from "./deployCommands";
 import {Player } from 'discord-player';
+
 
 export const client = new Client({
     intents: ['Guilds', 'GuildMessages', 'DirectMessages', "GuildVoiceStates", "GuildMembers"]
@@ -19,9 +21,15 @@ client.on('ready', async (guild) => {
     deployCommands();
     console.log('commands deployed');
 
-    //initiatize the discord player
-    await player.extractors.loadDefault();
+    //initiatize the discord player extractors
+    await player.extractors.loadDefault((ext) => ext !== 'YouTubeExtractor');
+
+    // this event is emitted whenever discord-player starts to play a track
+    player.events.on('playerStart', (queue, track) => {});
+
     console.log('player ready');
+
+   
 })
 
 //event for when a new user interaction has been created

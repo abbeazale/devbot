@@ -11,16 +11,19 @@ export async function execute(interaction: CommandInteraction){
     console.log('queues', player.queues.cache)
 
     const guildId = interaction.guildId;
-    if (!guildId) {
-        return interaction.reply('Guild ID is not available.');
-    }
-
-    const queue = player.queues.get(guildId);
-
-    if (!queue) {
-        return interaction.reply('Nothing is currently playing!');
-    }
     
-    console.log(`the queue ${queue.tracks.map((track: any) => track).join('\n')}`)
-    return interaction.reply(`The current queue is ${queue.tracks.map((track: any) => track.title).join('\n')}`)
+    if (guildId) {
+        const queue = player.queues.get(guildId);
+
+        if (queue) {
+            console.log(`the queue  ${queue.tracks.map((track: any) => track).join('\n')}`)
+            return interaction.reply(`The next songs are \n ${queue.tracks.map((track: any) => track.title).join('\n')}`)
+        }
+        else{
+            return interaction.reply('Nothing is currently playing!');
+        }
+    }
+
+    
+
 }
