@@ -14,8 +14,10 @@ export async function execute( interaction: CommandInteraction){
     }   
 
    try {
-        queue.node.skip();
-        return interaction.followUp('Skipped the current song');
+        if(queue.node.skip()){
+            return interaction.followUp(`Skipped the current song: ${queue.currentTrack?.title}`);
+        }
+       
    } catch (e) {
         console.log('error', e);
         return interaction.followUp(`Something went wrong: ${e}`);

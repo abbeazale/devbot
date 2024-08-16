@@ -1,7 +1,8 @@
 import { CommandInteraction, SlashCommandBuilder } from "discord.js";
 import { GuildMember } from 'discord.js';
+import {YoutubeiExtractor} from 'discord-player-youtubei';
 //const { useMainPlayer } = require('discord-player');
-import { useMainPlayer } from 'discord-player';
+import { useMainPlayer, Player } from 'discord-player';
 
 export const data = new SlashCommandBuilder()
     .setName('play')
@@ -13,36 +14,45 @@ export const data = new SlashCommandBuilder()
             .setRequired(true)
     )
 
-export async function execute(interaction: CommandInteraction){
-    const player = useMainPlayer();
-    const query = interaction.options.get('song')?.value as string || '';
-    //connect to a voice channel
-    if (interaction.member instanceof GuildMember) {
-        //connect to a voice channel
-        const channel = interaction.member?.voice.channel;
-        //const channel = await player.connect(interaction.member.voice.channel!);
+    export async function execute(interaction: CommandInteraction) {
+        console.log('Execute function called');
+        const player = useMainPlayer();
+       
+        //register the player to play youtube with youtube credentials
+        player.extractors.register(YoutubeiExtractor, {
+            authentication: process.env.YOUTUBEI_ACCESS
+        })
+
+        //gets the song entry from the user
+        const query = interaction.options.get('song')?.value as string || '';
+        
+        //checks theres a member in the guild
+        if (!(interaction.member instanceof GuildMember)) {
+            return interaction.reply('You must be in a voice channel to use this command');
+        }
+    
+        const channel = interaction.member.voice.channel;
+
+        //checks if the member is in a voice channel
+        if (!channel) {
+            return interaction.reply('You need to be in a voice channel to play music!');
+        }
+    
         await interaction.deferReply();
+    
         try {
-
-            if (!channel) {
-                return interaction.reply('no channel found');
-            }
-
             const {track} = await player.play(channel, query, {
                 nodeOptions: {
-                    metadata: interaction
+                    metadata: interaction,
+                    leaveOnEmpty: false,
+                    leaveOnEnd: false,
                 }
             });
+        
+            return interaction.followUp(`Started playing **${track.title}**!`);
 
-            return interaction.followUp(`queing up ${track.title}`)
-        } catch(error){
-            console.log('error', error)
+        } catch (error) {
+            console.error('Playback error:', error);
             return interaction.followUp(`Something went wrong: ${error}`);
         }
-
-    } else {
-        // Handle the case where interaction.member is not a GuildMember
-        console.log('not in a voice channel')
-        return interaction.reply('You must be in a voice channel to use this command');
     }
-}

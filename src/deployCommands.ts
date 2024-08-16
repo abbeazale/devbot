@@ -10,6 +10,7 @@ type DeplyoCommandProps = {
     guildId: string;
 };
 
+//add commands to the bot
 export async function deployCommands(){
     console.log('STARTING TO DEPLOY APPLICATION COMMANDS');
     try {

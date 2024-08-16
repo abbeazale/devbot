@@ -16,7 +16,7 @@ export async function execute(interaction: CommandInteraction){
 
     try {
         queue?.node.stop();
-        return interaction.followUp('Stopped the current song');
+        return interaction.followUp('Stopped playing music');
     } catch(e) {
         console.log('error', e);
         return interaction.followUp(`Something went wrong: ${e}`);
