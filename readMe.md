@@ -1,7 +1,16 @@
-![dev bot logo](devbot.png)
-#Dev Bot - A Discord Music Bot
 
-#Overview
+<h1 align="center">
+	<img
+		width="300"
+		alt="Dev Bot"
+		src="devbot.png">
+</h1>
+
+<h1 align="center">
+    Dev Bot - A Discord Music Bot
+</h1>
+
+## Overview
 Dev Bot is a discord that can play audio from youtube right in the channel you're in.
 You can pause, skip, and queue songs making it great for servers that have a lot of people or even if youre in a vc by yourself... 
 
@@ -35,7 +44,7 @@ Set up the environment variables by adding the variables to `.env` and filling t
 To get your `YOUTUBEI_ACCESS` token, run the following command
 
 ```bash
-npx --no discord-player-youtubei
+$ npx --no discord-player-youtubei
 ```
 </br>
 
@@ -48,7 +57,7 @@ npx --no discord-player-youtubei
 |`dev`   | Runs the TypeScript code in a development environment using tsx |
 
 
-#Coming Soon
+## Coming Soon
 - Spotify Integration
 - Morning bitcoin price update
 - Top animes
