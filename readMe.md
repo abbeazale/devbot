@@ -4,10 +4,11 @@
 		width="300"
 		alt="Dev Bot"
 		src="devbot.png"/>
-    Dev Bot - A Discord Music Bot
 </h1>
 
-
+<h2 align="center">
+    Dev Bot - A Discord Music Bot
+</h2>
 
 ## Overview
 Dev Bot is a discord that can play audio from youtube right in the channel you're in.
