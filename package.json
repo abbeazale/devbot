@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "tsx watch src/index.ts",
     "build": "tsc",
-    "start": "ts-node --loader  ."
+    "start": "tsx src/index.ts"
   },
   "keywords": [],
   "type": "module",
