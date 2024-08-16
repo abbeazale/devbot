@@ -19,7 +19,7 @@ The project uses discord.js, discord-player and typescript.
 
 #Examples
 
-## Setup <a name="Setup"></a>
+## Setup 
 
 Ensure that you have node and yarn installed, and run
 
@@ -49,7 +49,7 @@ $ npx --no discord-player-youtubei
 ```
 </br>
 
-#yarn scripts
+## Yarn Scripts
 
 | Script | Purpose                                                         |
 |--------|-----------------------------------------------------------------|
