@@ -17,7 +17,6 @@ You can pause, skip, and queue songs making it great for servers that have a lot
 
 The project uses discord.js, discord-player and typescript.
 
-#Examples
 
 ## Setup 
 
@@ -33,12 +32,14 @@ yarn start
 
 Set up the environment variables by adding the variables to `.env` and filling them out with your information.
 
-| Environment variable | Value                        |
-| -------------------- | ---------------------------- |
-| `TOKEN`              | Discord bot token            |
-| `BOT_URI`            | Mongodb connection uri       |
-| `SERV_ID`            | Server id of your server     |
-| `YOUTUBEI_ACCESS`    | See Below                    |
+| Environment variable | Value                         |
+| -------------------- | ------------------------------|
+| `TOKEN`              | Discord bot token             |
+| `CLIENT_ID`          | Application id of discord bot |
+| `SERV_ID`            | Server id of your server      |
+| `MAL_ID`             | My anime list application id  |
+| `YOUTUBEI_ACCESS`    | See Below                     |
+
 
 </br>
 
@@ -61,4 +62,3 @@ $ npx --no discord-player-youtubei
 ## Coming Soon
 - Spotify Integration
 - Morning bitcoin price update
-- Top animes
