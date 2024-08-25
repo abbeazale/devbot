@@ -7,6 +7,7 @@ import * as queue from "./queue";
 import * as resume from "./resume";
 import * as pause from "./pause";
 import * as stop from "./stop";
+import * as kick from "./kick";
 export const commands = {
     ping,
     love,
@@ -17,5 +18,6 @@ export const commands = {
     pause,
     resume,
     stop,
+    kick
 
 };
