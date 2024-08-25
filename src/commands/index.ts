@@ -8,6 +8,7 @@ import * as resume from "./resume";
 import * as pause from "./pause";
 import * as stop from "./stop";
 import * as kick from "./kick";
+import * as anime from "./anime";
 export const commands = {
     ping,
     love,
@@ -18,6 +19,7 @@ export const commands = {
     pause,
     resume,
     stop,
-    kick
+    kick,
+    anime
 
 };
