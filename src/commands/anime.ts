@@ -3,7 +3,7 @@ import malApi from '../api/animeAPI';
 
 export const data = new SlashCommandBuilder()
     .setName("anime")
-    .setDescription("Top 10 anime of the week");
+    .setDescription("Show top 10 anime of the week");
 
 export async function execute(interaction: CommandInteraction){
     await interaction.deferReply();
