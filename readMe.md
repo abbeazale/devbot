@@ -15,6 +15,12 @@
 Dev Bot is a discord that can play audio from youtube right in the channel you're in.
 You can pause, skip, and queue songs making it great for servers that have a lot of people or even if youre in a vc by yourself... 
 
+
+Additional Commands:  </br>
+crpyto: shows the current Bitcoin and Ethereum price from CoinMarketCap </br>
+anime: shows the top animes for the week from My Anime List </br>
+
+
 The project uses discord.js, discord-player and typescript.
 
 
@@ -38,6 +44,7 @@ Set up the environment variables by adding the variables to `.env` and filling t
 | `CLIENT_ID`          | Application id of discord bot |
 | `SERV_ID`            | Server id of your server      |
 | `MAL_ID`             | My anime list application id  |
+| `CRYPTO_KEY`		   | CoinMarketCap API key         |
 | `YOUTUBEI_ACCESS`    | See Below                     |
 
 
@@ -61,4 +68,4 @@ $ npx --no discord-player-youtubei
 
 ## Coming Soon
 - Spotify Integration
-- Morning bitcoin price update
+

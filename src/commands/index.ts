@@ -9,6 +9,8 @@ import * as pause from "./pause";
 import * as stop from "./stop";
 import * as kick from "./kick";
 import * as anime from "./anime";
+import * as crypto from "./crypto";
+
 export const commands = {
     ping,
     love,
@@ -20,6 +22,7 @@ export const commands = {
     resume,
     stop,
     kick,
-    anime
+    anime,
+    crypto
 
 };
